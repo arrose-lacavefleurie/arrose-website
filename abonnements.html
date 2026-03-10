@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abonnements – Arrosé</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── CITATION ───────────────────────────────────── */
+    .abonnement-quote {
+      font-family: var(--font-hand);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      text-align: center;
+      color: var(--vert);
+      padding: 56px 120px;
+      line-height: 1.5;
+    }
+
+    /* ── BLOC DESCRIPTION ───────────────────────────── */
+    .abonnement-desc {
+      background: var(--vert);
+      color: var(--beige);
+      padding: 52px 80px;
+      text-align: center;
+    }
+    .abonnement-desc p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: rgba(240,230,218,.95);
+      margin-bottom: 12px;
+    }
+    .abonnement-desc strong { color: var(--beige); }
+    .abonnement-desc a {
+      color: var(--beige);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* ── PHOTOS STRIP ───────────────────────────────── */
+    .abonnement-photos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 240px;
+    }
+    .abonnement-photos div { overflow: hidden; }
+    .abonnement-photos div img,
+    .abonnement-photos div.ph-green {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .abonnement-photos div:hover img { transform: scale(1.06); }
+
+    /* ── VIN ABONNEMENT ─────────────────────────────── */
+    .vin-abt-note {
+      font-family: var(--font-hand);
+      font-size: 1.7rem;
+      color: var(--bordeaux);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 900px) {
+      .abonnement-quote { padding: 40px 20px; }
+      .abonnement-desc { padding: 40px 20px; }
+      .abonnement-photos { grid-template-columns: repeat(2, 1fr); height: 300px; }
+    }
+  </style>
+</head>
+<body data-page="abonnements">
+
+  <div id="nav-placeholder"></div>
+
+  <div class="page-header">
+    <a href="index.html">
+      <span class="logo-main">ARROSÉ</span>
+      <span class="logo-sub">La cave fleurie</span>
+    </a>
+  </div>
+
+  <!-- Citation -->
+  <p class="abonnement-quote">
+    "Une seule fleur vous manque, et tout votre vase est dépeuplé"
+  </p>
+
+  <!-- Description abonnements fleurs -->
+  <div class="abonnement-desc">
+    <p>Et si on arrêtait d'attendre l'évènement avec un grand E pour offrir un bouquet ? Pourquoi ne pas simplement égayer une pièce, découvrir de nouvelles fleurs, ou juste se faire plaisir toute l'année ?</p>
+    <p>Alors chez Arrosé, on vous propose des abonnements de bouquets de saisons <strong>modulables</strong> pour combler tous les amoureux de fleurs.</p>
+    <br/>
+    <p><strong>Plus de détail… <a href="#">PDF téléchargeable</a></strong></p>
+  </div>
+
+  <!-- Photos bouquets -->
+  <div class="abonnement-photos">
+    <!-- Remplacer par de vraies images : <img src="images/bouquet1.jpg" alt="Bouquet" /> -->
+    <div class="ph-green"></div>
+    <div class="ph-green"></div>
+    <div class="ph-green"></div>
+    <div class="ph-green"></div>
+  </div>
+
+  <!-- Abonnement vins aussi -->
+  <section class="section">
+    <div class="section-2col">
+      <div>
+        <p class="vin-abt-note">*Hep hep hep, Arrosé, ce n'est pas qu'un fleuriste si ?</p>
+        <p>Pourquoi se refuser les plaisirs qui s'offrent à nous… Eh oui, vos fleurs peuvent s'accompagner de vins si vous le désirez.</p>
+        <p>Même principe, le nombre de bouteilles, le budget, la fréquence, tout est personnalisable !</p>
+        <p>En fonction de vos préférences, passez en boutique : Tanguy se fera un plaisir d'échanger avec vous à ce sujet.</p>
+        <p>Et si les fleurs ça ne vous intéressent pas mais que la découverte du monde de l'œnologie si ? <a class="cta-link" href="vins.html">Voir les dégustations →</a></p>
+      </div>
+      <!-- Remplacer par : <img src="images/fleurs-vin.jpg" alt="Fleurs et vin" /> -->
+      <div class="ph" style="height:360px;"></div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+</body>
+</html>

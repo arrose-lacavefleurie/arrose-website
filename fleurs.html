@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleurs – Arrosé</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── GRID ATELIERS (5 cartes) ───────────────────── */
+    .ateliers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .ateliers-grid .card-img:nth-child(4),
+    .ateliers-grid .card-img:nth-child(5) {
+      /* 2 cartes sur la deuxième ligne : les centrer */
+    }
+    .ateliers-row2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+      max-width: 66.66%;
+    }
+
+    @media (max-width: 900px) {
+      .ateliers-grid { grid-template-columns: 1fr 1fr; }
+      .ateliers-row2 { max-width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .ateliers-grid { grid-template-columns: 1fr; }
+      .ateliers-row2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body data-page="fleurs">
+
+  <div id="nav-placeholder"></div>
+
+  <div class="page-header">
+    <a href="index.html">
+      <span class="logo-main">ARROSÉ</span>
+      <span class="logo-sub">La cave fleurie</span>
+    </a>
+  </div>
+
+  <!-- Avec quoi on bouquette ? -->
+  <section class="section">
+    <div class="section-2col">
+      <div>
+        <h2>Avec quoi on bouquette ?</h2>
+        <p><strong>Et si on retournait à nos basiques ? Des roses en juin, du mimosa en janvier mais surtout, des fleurs qui viennent de chez nous.</strong> Chez Arrosé, on s'engage à vous proposer au maximum des fleurs de saisons provenant de Bretagne et de France.</p>
+        <br/>
+        <p><em>À noter que nous n'excluons pas la possibilité de passer des commandes de fleurs hollandaises en cas de rupture de stock, mais que cela sera spécifié en toute transparence en boutique.</em></p>
+      </div>
+      <!-- Remplacer par : <img src="images/bouquet.jpg" alt="Bouquet de fleurs" /> -->
+      <div class="ph-green" style="height:420px;"></div>
+    </div>
+  </section>
+
+  <!-- Thèmes des ateliers floraux -->
+  <section class="section-green">
+    <h2>Thème de nos ateliers floraux</h2>
+
+    <div class="ateliers-grid">
+      <div class="card-img ph-green">
+        <!-- Remplacer par : <img src="images/atelier-bouquet.jpg" alt="Bouquet de saison" /> -->
+        <div class="card-img-label">BOUQUET<br/>DE SAISON</div>
+      </div>
+      <div class="card-img ph-green">
+        <div class="card-img-label">COMPOSITION<br/>CENTRE DE TABLE</div>
+      </div>
+      <div class="card-img ph-green">
+        <div class="card-img-label">PARENTS<br/>&amp; ENFANTS</div>
+      </div>
+    </div>
+    <div class="ateliers-row2">
+      <div class="card-img ph-green">
+        <div class="card-img-label">COURONNE<br/>DE SAISON</div>
+      </div>
+      <div class="card-img ph-green">
+        <div class="card-img-label">SUR<br/>MESURE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendrier des ateliers -->
+  <section class="section-green" style="padding-top: 0;" id="calendrier-ateliers">
+    <h2>Calendrier des ateliers</h2>
+    <p style="color:rgba(240,230,218,.8); font-size:.85rem; margin-bottom:32px;">
+      Réservation par téléphone au xx xx xx xx xx ou par mail
+      <a class="cta-link cta-link-beige" href="contact.html">ici</a>
+    </p>
+    <div class="calendrier-grid">
+      <div class="cal-month">
+        <h4>Septembre 2026</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Octobre 2026</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Novembre 2026</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Décembre 2026</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Janvier 2027</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Février 2027</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Mars 2027</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Avril 2027</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Mai 2027</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inscriptions -->
+  <section class="demande-section">
+    <h2>Inscriptions</h2>
+    <div>
+      <p>Pour vous inscrire à l'un de nos ateliers, contactez-nous par téléphone au xx xx xx xx xx ou via notre formulaire de contact.</p>
+      <a class="cta-link" href="contact.html">Nous contacter →</a>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+</body>
+</html>

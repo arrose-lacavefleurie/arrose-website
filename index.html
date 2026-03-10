@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arrosé – La cave fleurie</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── HERO ───────────────────────────────────────── */
+    .hero {
+      background: var(--beige);
+      padding: 56px 48px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: clamp(5rem, 12vw, 9rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 0.9;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-sub {
+      font-family: var(--font-hand);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      margin-top: 8px;
+    }
+
+    .hero-definition {
+      max-width: 740px;
+      margin: 28px auto 0;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      text-align: justify;
+    }
+
+    /* ── HERO GRID ──────────────────────────────────── */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 40px;
+      height: 380px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: block;
+    }
+
+    .hero-card-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .hero-card:hover .hero-card-bg {
+      transform: scale(1.05);
+    }
+
+    .hero-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 32px;
+    }
+
+    .hero-card-title {
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blanc);
+    }
+
+    .hero-card-sub {
+      color: rgba(255, 255, 255, .85);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      margin-top: 6px;
+    }
+
+    /* ── PRÉSENTATION ───────────────────────────────── */
+    .section-presentation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      padding: 80px 48px;
+      background: var(--beige);
+    }
+
+    .section-presentation h2 {
+      font-family: var(--font-hand);
+      font-size: 2.8rem;
+      margin-bottom: 24px;
+    }
+
+    .section-presentation p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .section-presentation ul {
+      list-style: none;
+      margin: 8px 0 16px;
+    }
+
+    .section-presentation ul li::before {
+      content: "• ";
+      color: var(--bordeaux);
+    }
+
+    .section-presentation ul li {
+      font-size: 0.9rem;
+      line-height: 1.9;
+    }
+
+    .pres-photo {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    /* ── SOCIAL STRIP ───────────────────────────────── */
+    .social-strip {
+      background: var(--blanc);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1.5px solid #ddd;
+      border-bottom: 1.5px solid #ddd;
+    }
+
+    .social-card {
+      padding: 40px 20px;
+      border-right: 1.5px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      min-height: 140px;
+    }
+
+    .social-card:last-child {
+      border-right: none;
+    }
+
+    .social-card.label {
+      font-size: 0.7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #888;
+      font-weight: 400;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding: 36px 20px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .hero-card {
+        height: 220px;
+      }
+
+      .section-presentation {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+      }
+
+      .pres-photo {
+        height: 300px;
+      }
+
+      .social-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body data-page="home">
+
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>ARROSÉ</h1>
+    <p class="hero-sub">La cave fleurie</p>
+    <p class="hero-definition">
+      <strong>Arrosé [a.ʁo.ze] n. p. :</strong> lieu où se mêle l'odeur du bois des caisses de vins à celle des fleurs
+      de saisons. Lieu chaleureux où les papilles se régalent autant que les yeux. Lieu qui n'attend que vous.
+    </p>
+  </section>
+
+  <!-- Cartes Vins / Fleurs -->
+  <div class="hero-grid">
+    <a class="hero-card" href="vins.html">
+      <div class="hero-card-bg ph" style="height:100%;"></div>
+      <div class="hero-card-overlay">
+        <span class="hero-card-title">VINS</span>
+        <span class="hero-card-sub">informations · planning dégustation</span>
+      </div>
+    </a>
+    <a class="hero-card" href="fleurs.html">
+      <div class="hero-card-bg ph-green" style="height:100%;"></div>
+      <div class="hero-card-overlay">
+        <span class="hero-card-title">FLEURS</span>
+        <span class="hero-card-sub">informations · commandes · planning ateliers</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Présentation -->
+  <section class="section-presentation">
+    <div>
+      <h2>On se présente ?</h2>
+      <p>Nous, c'est Erell et Tanguy, des copains de longue date. Originaires de Trébeurden et de Lannion, nous sommes
+        passés par la capitale au début de notre vie professionnelle, ce qui nous a permis de nous rendre compte de
+        trois évidences :</p>
+      <ul>
+        <li>La Bretagne coule dans nos veines.</li>
+        <li>L'un aime le vin, l'autre les fleurs… Ou bien les deux.</li>
+        <li>On adore faire plaisir aux autres.</li>
+      </ul>
+      <p>De ces trois points naît un projet commun : créer un lieu où nos deux univers se rencontrent, se côtoient et
+        fonctionnent ensemble, chez nous. Vous souhaitez plus de détails ? Nous serons ravis de vous en dire plus à
+        Arrosé, La Cave Fleurie.</p>
+    </div>
+    <!-- Remplacer par : <img src="images/equipe.jpg" alt="Erell et Tanguy" class="pres-photo" /> -->
+    <div class="ph pres-photo"></div>
+  </section>
+
+  <!-- Ils nous font confiance / Avis 
+  <div class="social-strip">
+    <div class="social-card label">Ils nous font confiance</div>
+    <div class="social-card">Hôtel de la Côte</div>
+    <div class="social-card">Avis Google</div>
+    <div class="social-card">Restaurant Le Port</div>
+    <div class="social-card">La Maison Bretonne</div>
+  </div>
+-->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/components.js"></script>
+</body>
+
+</html>

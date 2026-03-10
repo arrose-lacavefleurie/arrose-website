@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Évènements – Arrosé</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .events-intro {
+      font-family: var(--font-hand);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      text-align: center;
+      color: var(--bordeaux);
+      padding: 56px 80px 0;
+      line-height: 1.6;
+    }
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .events-grid .card-img { height: 380px; }
+
+    @media (max-width: 900px) {
+      .events-intro { padding: 40px 20px 0; }
+      .events-grid { grid-template-columns: 1fr; }
+      .events-grid .card-img { height: 220px; }
+    }
+  </style>
+</head>
+<body data-page="evenements">
+
+  <div id="nav-placeholder"></div>
+
+  <div class="page-header">
+    <a href="index.html">
+      <span class="logo-main">ARROSÉ</span>
+      <span class="logo-sub">La cave fleurie</span>
+    </a>
+  </div>
+
+  <!-- Accroche -->
+  <p class="events-intro">
+    Des fleurs pour chaque étape, du vin pour chaque table :<br/>
+    Arrosé accompagne les grands bonheurs et les jours plus silencieux.
+  </p>
+
+  <!-- Cartes évènements -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="events-grid">
+      <div class="card-img ph">
+        <!-- Remplacer par : <img src="images/mariage.jpg" alt="Mariage" /> -->
+        <div class="card-img-label">MARIAGE</div>
+      </div>
+      <div class="card-img ph-green">
+        <!-- Remplacer par : <img src="images/deuil.jpg" alt="Deuil" /> -->
+        <div class="card-img-label">DEUIL</div>
+      </div>
+      <div class="card-img ph-dark">
+        <!-- Remplacer par : <img src="images/autres.jpg" alt="Autres demandes" /> -->
+        <div class="card-img-label">AUTRES<br/>DEMANDES</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demande spécifique -->
+  <section class="demande-section">
+    <h2>Une demande plus spécifique ?</h2>
+    <div>
+      <p>Une dégustation privatisée et sur mesure, une commande pour un évènement, un partenariat…</p>
+      <p>On est curieux, discutons-en : <a class="cta-link" href="contact.html">Contact →</a></p>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+</body>
+</html>

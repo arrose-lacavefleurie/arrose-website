@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vins – Arrosé</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── DÉGUSTATIONS ───────────────────────────────── */
+    .degu-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      margin-top: 24px;
+    }
+    .degu-card h3 {
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: .1em;
+      text-decoration: underline;
+      margin-bottom: 14px;
+      color: var(--beige);
+    }
+    .degu-card p { margin-bottom: 10px; }
+    .degu-card ul { list-style: none; margin: 8px 0; }
+    .degu-card ul li { font-size: 0.85rem; line-height: 1.8; color: rgba(240,230,218,.85); }
+    .degu-card ul li::before { content: "• "; }
+    .degu-aside {
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      text-align: center;
+      color: var(--beige);
+      border-left: 1px solid rgba(240,230,218,.3);
+      padding-left: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .degu-cards { grid-template-columns: 1fr; gap: 24px; }
+      .degu-aside { border-left: none; border-top: 1px solid rgba(240,230,218,.3); padding-left: 0; padding-top: 24px; }
+    }
+  </style>
+</head>
+<body data-page="vins">
+
+  <div id="nav-placeholder"></div>
+
+  <div class="page-header">
+    <a href="index.html">
+      <span class="logo-main">ARROSÉ</span>
+      <span class="logo-sub">La cave fleurie</span>
+    </a>
+  </div>
+
+  <!-- Qu'est-ce qu'on boit ? -->
+  <section class="section">
+    <div class="section-2col">
+      <div>
+        <h2>Qu'est-ce qu'on boit ?</h2>
+        <p>Chez nous, il y en a pour tous les goûts et toutes les envies.</p>
+        <p>Arrosé c'est près de <strong>300 références de vins</strong>, issues des plus beaux terroirs français. De la Bourgogne à la Corse en passant par le Languedoc et l'Alsace, nous nous engageons à mettre en lumière des domaines indépendants et passionnés par leur métier.</p>
+        <p>Pas peu fiers de notre région, nous avons fait le choix de vous proposer des bières et des cidres uniquement bretons. N'y voyez là aucun chauvinisme bien sûr. (on a même du vin made in BZH…)</p>
+        <p>Côté spiritueux, environ <strong>80 bouteilles</strong> ornent la vieille armoire de Mamie, ne les laissez donc pas prendre la poussière. Au menu : whisky, gin, rhum, ainsi que différentes liqueurs et apéritifs.</p>
+      </div>
+      <!-- Remplacer par : <img src="images/cave-vins.jpg" alt="Cave à vins" /> -->
+      <div class="ph" style="height:420px;"></div>
+    </div>
+  </section>
+
+  <!-- Une petite dégustation ? -->
+  <section class="section-dark">
+    <h2>Une petite dégustation, ça te tente ?</h2>
+    <div class="degu-cards">
+      <div class="degu-card">
+        <h3>Une dégustation à thème</h3>
+        <p>En fonction de la période ou encore des coups de cœurs de Tanguy, tu as le choix entre deux types de dégustation :</p>
+        <ul>
+          <li><strong>Une initiation</strong></li>
+          <li><strong>Une dégustation à thème</strong></li>
+        </ul>
+        <br/>
+        <p>Pour voir le planning :</p>
+        <a class="cta-link cta-link-beige" href="#calendrier-degustations">Planning des dégustations ↓</a>
+      </div>
+      <div class="degu-card">
+        <h3>Une dégustation à ton image</h3>
+        <p>Tu as un groupe de copain(e)s, de cousin(e)s ou encore de collègues et tu souhaites découvrir le monde de l'œnologie ?</p>
+        <p>On peut créer une soirée de dégustation adaptée à tes envies. On la planifie ensemble ? Passe à la boutique ou appelle-nous au xx xx xx xx xx.</p>
+      </div>
+      <div class="degu-aside">
+        Chaque dégustation s'accompagne d'un plateau de fromage et de charcuterie.<br/><br/>
+        Elle se déroule à partir de 19h30, à la fermeture de la boutique.
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendrier dégustations -->
+  <section class="section-dark" style="padding-top: 0;" id="calendrier-degustations">
+    <h2>Calendrier des dégustations – xx € / personne</h2>
+    <p style="color:rgba(240,230,218,.8); font-size:.85rem; margin-bottom:32px;">
+      Réservation par téléphone au xx xx xx xx xx ou par mail
+      <a class="cta-link cta-link-beige" href="contact.html">ici</a>
+    </p>
+    <div class="calendrier-grid">
+      <div class="cal-month">
+        <h4>Septembre 2026</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Octobre 2026</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Novembre 2026</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Décembre 2026</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Janvier 2027</h4>
+        <ul><li>xx/xx : Vins Savoie × Raclette (8 places)</li><li>xx/xx : Vins Savoie × Fondue (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Février 2027</h4>
+        <ul><li>xx/xx : Découverte du Rhône (8 places)</li><li>xx/xx : Découverte du Rhône (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Mars 2027</h4>
+        <ul><li>xx/xx : Découverte Loire (8 places)</li><li>xx/xx : Découverte Loire (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Avril 2027</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+      <div class="cal-month">
+        <h4>Mai 2027</h4>
+        <ul><li>xx/xx : bla bla (8 places)</li><li>xx/xx : bla bla (8 places)</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demande spécifique -->
+  <section class="demande-section">
+    <h2>Une demande plus spécifique ?</h2>
+    <div>
+      <p>Une dégustation privatisée et sur mesure, une commande pour un évènement, un partenariat…</p>
+      <p>On est curieux, discutons-en : <a class="cta-link" href="contact.html">Contact →</a></p>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+</body>
+</html>
