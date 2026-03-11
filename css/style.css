@@ -527,6 +527,10 @@ footer {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+.nav-hamburger {
+  color: inherit;
+}
+
 .nav-overlay {
   display: none;
   position: fixed;
@@ -877,6 +881,10 @@ footer {
 /* ════════════════════════════════════════════════════
    PAGE : fleurs.html
 ════════════════════════════════════════════════════ */
+
+body[data-page="fleurs"] {
+  cursor: url("images/curseur-fleur.png"), auto;
+}
 
 /* ── SECTION INSCRIPTION CENTRÉE ───────────────── */
 .demande-section-inscription {
