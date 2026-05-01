@@ -24,7 +24,7 @@
         <p><em>À noter que nous n'excluons pas la possibilité de passer des commandes de fleurs hollandaises en cas de
             rupture de stock, mais que cela sera spécifié en toute transparence en boutique.</em></p>
       </div>
-      <img src="images/bouquet.jpeg" alt="Bouquet de fleurs" class="ph-green" style="height:420px;">
+      <img src="images/IMG_0269.jpg" alt="Bouquet de fleurs" class="ph-green" style="height:420px;">
     </div>
   </section>
 
@@ -35,7 +35,7 @@
     <div class="ateliers-grid">
 
       <div class="card-img ph-green">
-        <img src="images/bouquet-saison.jpeg" alt="atelier-bouquet-saison" class="card-bg">
+        <img src="images/IMG_0271.jpg" alt="atelier-bouquet-saison" class="card-bg">
         <div class="card-img-label">BOUQUET<br />DE SAISON</div>
         <div class="card-hover">
           <p>2h30 pour apprendre à faire son bouquet déstructuré avec nos fleurs de saison, papoter et prendre un petit
@@ -44,7 +44,7 @@
       </div>
 
       <div class="card-img ph-green">
-        <img src="images/composition-florale.jpg" alt="atelier-centre-table" class="card-bg">
+        <img src="images/IMG_0272.jpg" alt="atelier-centre-table" class="card-bg">
         <div class="card-img-label">COMPOSITION<br />CENTRE DE TABLE</div>
         <div class="card-hover">
           <p>2h30 pour apprendre à faire un centre de table piqué à l'aide de grillage à poule, papoter et prendre un
@@ -53,7 +53,7 @@
       </div>
 
       <div class="card-img ph-green">
-        <img src="images/enfants-parents.jpg" alt="atelier-parents-enfants" class="card-bg">
+        <img src="images/IMG_0285.jpg" alt="atelier-parents-enfants" class="card-bg">
         <div class="card-img-label">PARENTS<br />&amp; ENFANTS</div>
         <div class="card-hover">
           <p>2h30 pour faire un kokedama ou un terrarium avec son enfant (à partir de 8 ans), papoter et prendre un
@@ -65,7 +65,7 @@
     <div class="ateliers-row2">
 
       <div class="card-img ph-green">
-        <img src="images/couronne.jpg" alt="atelier-couronne-saison" class="card-bg">
+        <img src="images/IMG_0287.jpg" alt="atelier-couronne-saison" class="card-bg">
         <div class="card-img-label">COURONNE<br />DE SAISON</div>
         <div class="card-hover">
           <p>2h30 pour créer sa couronne en fonction de la saison (sapin, mimosa, séché…)</p>
@@ -88,56 +88,9 @@
   <section class="demande-section-inscription inscription-wrapper">
     <img src="illus/fleur_vert.png" alt="" class="inscription-fleur" aria-hidden="true" />
     <h2>Inscriptions</h2>
-    <p>Pour vous inscrire à l'un de nos ateliers, remplissez le formulaire ci-dessous ou contactez-nous par téléphone au
-      xx xx xx xx xx.</p>
-
-    <form class="inscription-form" action="https://formspree.io/f/VOTRE_ID" method="POST" id="inscription-form">
-      <div>
-        <label for="prenom">Prénom</label>
-        <input type="text" id="prenom" name="prenom" required placeholder="Erell" />
-      </div>
-
-      <div>
-        <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" required placeholder="Dupont" />
-      </div>
-
-      <div>
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required placeholder="tanguy@exemple.fr" />
-      </div>
-
-      <div>
-        <label for="telephone">Téléphone</label>
-        <input type="tel" id="telephone" name="telephone" placeholder="06 xx xx xx xx" />
-      </div>
-
-      <div class="field-full">
-        <label for="atelier">Atelier souhaité</label>
-        <select id="atelier" name="atelier" required>
-          <option value="" disabled selected>— Choisir un atelier —</option>
-          <option value="bouquet-saison">Bouquet de saison</option>
-          <option value="centre-table">Composition centre de table</option>
-          <option value="parents-enfants">Parents &amp; Enfants</option>
-          <option value="couronne-saison">Couronne de saison</option>
-          <option value="sur-mesure">Sur mesure</option>
-        </select>
-      </div>
-
-      <div class="field-full">
-        <label for="message">Message (optionnel)</label>
-        <textarea id="message" name="message" placeholder="Une question, une précision…"></textarea>
-      </div>
-
-      <button type="submit" class="btn-submit">
-        → Envoyer ma demande
-      </button>
-    </form>
-
-    <div class="form-success" id="form-success">
-      ✓ Votre demande a bien été envoyée ! Nous vous répondrons dans les plus brefs délais.
-    </div>
-
+    <p>Les inscriptions aux ateliers floraux arrivent prochainement !</p>
+    <p>En attendant, n'hésitez pas à nous contacter pour toute question :</p>
+    <p><a class="cta-link" href="contact.html">→ Contact</a></p>
   </section>
 
   <div id="footer-placeholder"></div>
@@ -151,30 +104,6 @@
         if (!isOpen) card.classList.add("tapped");
       });
     });
-
-    /* ── Confirmation Formspree (AJAX optionnel) ────── */
-    const form = document.getElementById("inscription-form");
-    const success = document.getElementById("form-success");
-
-    if (form) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-        const res = await fetch(form.action, {
-          method: "POST",
-          body: data,
-          headers: {
-            Accept: "application/json"
-          },
-        });
-        if (res.ok) {
-          form.style.display = "none";
-          success.style.display = "block";
-        } else {
-          alert("Une erreur est survenue. Merci de réessayer ou de nous contacter par téléphone.");
-        }
-      });
-    }
   </script>
 </body>
 

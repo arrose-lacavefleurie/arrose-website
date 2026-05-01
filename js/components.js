@@ -9,8 +9,6 @@ function renderNav(activePage) {
   const pages = [
     { id: "vins", label: "Vins", href: "vins.html" },
     { id: "fleurs", label: "Fleurs", href: "fleurs.html" },
-    { id: "evenements", label: "Évènements", href: "evenements.html" },
-    { id: "abonnements", label: "Abonnements", href: "abonnements.html" },
   ];
 
   const links = pages
@@ -68,8 +66,8 @@ function renderFooter() {
       <div class="footer-col footer-col-sep">
         <h4>Contact</h4>
         <address>
-          31D rue des plages<br/>
-          Trébeurden – 22560<br/><br/>
+          31C rue des plages<br/>
+          22560 Trébeurden<br/><br/>
           <strong>Boutique :</strong> xx xx xx xx xx
         </address>
         <br/>
@@ -78,16 +76,19 @@ function renderFooter() {
       <div class="footer-col">
         <h4>Horaires</h4>
         <div class="footer-horaires">
-          <span>Lundi :</span> —<br/>
-          <span>Mardi :</span> —<br/>
-          <span>Mercredi :</span> —<br/>
-          <span>Jeudi :</span> —<br/>
-          <span>Vendredi :</span> —<br/>
-          <span>Samedi :</span> —<br/>
-          <span>Dimanche :</span> —
+          <span>Lundi :</span> Fermé <br/> 
+          <span>Mardi :</span> 9h30 / 19h30<br/> 
+          <span>Mercredi :</span> 9h30 / 19h30<br/> 
+          <span>Jeudi :</span> 9h30 / 19h30<br/> 
+          <span>Vendredi :</span> 9h30 / 19h30<br/> 
+          <span>Samedi :</span> 9h30 / 19h30<br/> 
+          <span>Dimanche :</span> 9h30 / 12h30<br/>
         </div>
       </div>
     </footer>
+    <div class="footer-bottom">
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
   `;
 }
 
