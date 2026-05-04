@@ -25,7 +25,7 @@
   --vert: #506927;
   --noir: #1a1a1a;
   --blanc: #ffffff;
-  --font-title: "Futura";
+  --font-title: "Futura", "Century Gothic", "Avenir Next";
   --font-hand: "more-sugar-thin", cursive;
 }
 
