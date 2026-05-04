@@ -60,7 +60,7 @@ function renderFooter() {
         <div class="logo-sub">La cave fleurie</div>
         <div class="footer-socials">
           <a href="https://www.instagram.com/arrose.lacavefleurie/" aria-label="Instagram">${svgIG}</a>
-          <a href="#" aria-label="Facebook">${svgFB}</a>
+          <a href="https://www.facebook.com/share/1Hr2yi8RXr/?mibextid=wwXIfr" aria-label="Facebook">${svgFB}</a>
         </div>
       </div>
       <div class="footer-col footer-col-sep">
