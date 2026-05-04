@@ -68,10 +68,12 @@ function renderFooter() {
         <address>
           31C rue des plages<br/>
           22560 Trébeurden<br/><br/>
-          <strong>Boutique :</strong> xx xx xx xx xx
+          <strong>Boutique :</strong> <br/>
+          06 10 50 08 42 <br/>
+          06 29 49 40 33 <br/>
         </address>
         <br/>
-        <a href="contact.html">Demande spécifique →</a>
+        <a href="contact.html">→ Demande spécifique</a>
       </div>
       <div class="footer-col">
         <h4>Horaires</h4>
