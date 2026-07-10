@@ -5,16 +5,16 @@
 
 @font-face {
   font-family: "more-sugar-regular";
-  src: url("../fonts/more-sugar.regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+  src: url("../fonts/more-sugar.regular.woff2") format("woff2"),
+       url("../fonts/more-sugar.regular.otf") format("opentype");
+  font-weight: normal; font-style: normal; font-display: swap;
 }
 
 @font-face {
   font-family: "more-sugar-thin";
-  src: url("../fonts/more-sugar.thin.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+  src: url("../fonts/more-sugar.thin.woff2") format("woff2"),
+       url("../fonts/more-sugar.thin.otf") format("opentype");
+  font-weight: normal; font-style: normal; font-display: swap;
 }
 
 /* ── VARIABLES ─────────────────────────────────────── */
@@ -1825,3 +1825,51 @@ body[data-page="fleurs"] {
     padding: 48px 24px;
   }
 }
+
+/* ═══ AJOUTS site-v2 — Avis Google & Vignerons ═══ */
+.avis-google{background:var(--beige2);padding:64px 48px;border-top:1.5px solid var(--noir);border-bottom:1.5px solid var(--noir);}
+.avis-google-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:40px;}
+.avis-google-head h2{font-family:var(--font-hand);font-size:2.4rem;color:var(--bordeaux);}
+.avis-google-note{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:700;letter-spacing:.03em;}
+.avis-google-note .g-logo{font-family:var(--font-title);font-weight:700;}
+.avis-stars{color:#e7a900;letter-spacing:2px;font-size:1.05rem;}
+.avis-track{display:flex;gap:22px;overflow-x:auto;padding:6px 2px 18px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.avis-track::-webkit-scrollbar{height:6px;}
+.avis-track::-webkit-scrollbar-thumb{background:rgba(118,22,19,.35);border-radius:3px;}
+.avis-card{flex:0 0 320px;scroll-snap-align:start;background:var(--beige);border:1.2px solid rgba(26,26,26,.18);border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:12px;}
+.avis-card .avis-stars{font-size:.95rem;}
+.avis-card p{font-size:.9rem;line-height:1.7;flex-grow:1;}
+.avis-card .avis-author{font-weight:700;font-size:.85rem;letter-spacing:.02em;}
+.avis-google-cta{text-align:center;margin-top:28px;}
+.vignerons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;}
+.vigneron-card{display:flex;flex-direction:column;background:var(--beige);border:1.4px solid var(--noir);border-radius:12px;overflow:hidden;color:var(--noir);transition:transform .25s ease,box-shadow .25s ease;min-height:150px;}
+a.vigneron-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(26,26,26,.16);}
+.vigneron-card-body{padding:22px 24px;display:flex;flex-direction:column;gap:6px;height:100%;}
+.vigneron-region{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--vert);}
+.vigneron-name{font-family:var(--font-hand);font-size:1.7rem;color:var(--bordeaux);line-height:1.1;}
+.vigneron-card .vigneron-more{margin-top:auto;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bordeaux);}
+.vigneron-card.soon{opacity:.72;border-style:dashed;}
+.vigneron-card.soon .vigneron-more{color:#8a8a8a;}
+.vigneron-detail{padding:64px 48px;max-width:1000px;margin:0 auto;}
+.vigneron-detail .back-link{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bordeaux);}
+.vigneron-detail-region{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--vert);margin-top:22px;}
+.vigneron-detail h1{font-family:var(--font-hand);font-size:3rem;color:var(--bordeaux);margin:4px 0 10px;}
+.vigneron-detail-baseline{font-family:var(--font-hand);font-size:1.4rem;color:var(--noir);margin-bottom:30px;}
+.vigneron-detail-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;}
+.vigneron-detail-grid p{font-size:.95rem;line-height:1.85;margin-bottom:16px;}
+.vigneron-detail-photo{position:relative;border:1.4px solid var(--noir);border-radius:14px;overflow:hidden;background:var(--beige2);min-height:320px;display:flex;align-items:center;justify-content:center;}
+.vigneron-detail-photo img{width:100%;height:100%;object-fit:cover;}
+.vigneron-coup{background:var(--bordeaux);color:var(--beige);border-radius:12px;padding:20px 24px;margin:8px 0 16px;font-size:.95rem;line-height:1.7;}
+.vigneron-coup strong{color:#fff;}
+.vigneron-tag-limite{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--vert);border:1.2px solid var(--vert);border-radius:30px;padding:5px 14px;}
+.fleurs-gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;margin-top:12px;}
+.fleurs-gallery figure{margin:0;overflow:hidden;border-radius:10px;}
+.fleurs-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.fleurs-gallery figure:hover img{transform:scale(1.06);}
+.fleurs-gallery .tall{grid-row:span 2;}
+@media (max-width:900px){.vignerons-grid{grid-template-columns:repeat(2,1fr);}.vigneron-detail-grid{grid-template-columns:1fr;}.fleurs-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px;}}
+@media (max-width:560px){.avis-google,.section,.section-dark,.section-green{padding-left:22px;padding-right:22px;}.vignerons-grid{grid-template-columns:1fr;}.avis-card{flex-basis:78vw;}}
+.lien-inline{color:var(--bordeaux);text-decoration:underline;font-weight:700;}
+.lien-inline:hover{color:var(--vert);}
+.lien-inline-beige{color:#fff;text-decoration:underline;font-weight:700;}
+.lien-inline-beige:hover{color:rgba(255,255,255,.75);}

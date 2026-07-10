@@ -9,6 +9,8 @@ function renderNav(activePage) {
   const pages = [
     { id: "vins", label: "Vins", href: "vins.html" },
     { id: "fleurs", label: "Fleurs", href: "fleurs.html" },
+    { id: "ateliers", label: "Ateliers", href: "ateliers.html" },
+    { id: "evenements", label: "Évènements", href: "evenements.html" },
   ];
 
   const links = pages

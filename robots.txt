@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /abonnements.html
+
+Sitemap: https://xn--arros-fsa.fr/sitemap.xml
