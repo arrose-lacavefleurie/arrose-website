@@ -175,3 +175,36 @@ document.querySelectorAll(".photo-rotator").forEach((rotator) => {
     imgs[current].classList.add("is-visible");
   }, 5500);
 });
+
+
+/* ── AVIS GOOGLE ──────────────────────────────────
+   Un seul endroit à modifier. "pages" indique où
+   l'avis s'affiche : home, vins, fleurs, contact */
+const AVIS = [
+  { nom: "Lucile L.", texte: "Très belle découverte ! La boutique est superbe, avec un concept génial. L'accueil est très chaleureux. Je recommande vivement cette boutique !", pages: ["home", "contact"] },
+  { nom: "Envel R.", texte: "Superbe concept, accueil au top et beaucoup de goût ! Bravo à ces deux jeunes commerçants pour cette belle cave fleurie !", pages: ["home", "contact"] },
+  { nom: "Antoine G.", texte: "Superbe accueil et très belle boutique ! De bons conseils pour les vins avec un large choix. Les bouquets de fleurs sont magnifiques.", pages: ["home", "vins"] },
+  { nom: "Charline R.", texte: "Boutique très chaleureuse où les 2 espaces cave et fleurs cohabitent parfaitement. Et surtout, 2 jeunes commerçants au top !", pages: ["home"] },
+  { nom: "Angélique N.", texte: "J'adore le concept, personnel aimable, de bon conseil ! J'ai acheté un bouquet de pivoines et une bouteille de vin blanc qui est excellent ! J'ai découvert des fleurs champêtre que je connaissais pas et il y a beaucoup de bon vin comme le gigondas ou morgon. Hésitez pas à aller faire un tour !", pages: ["vins"] },
+  { nom: "Lucille R.", texte: "Atelier dégustation et confection de bouquet. Un grand merci à Tanguy et Erell pour cette belle découverte. Merci pour leur patience et leur douceur. Un très grand choix de vins et de fleurs. Allez-y les yeux fermés !", pages: ["vins", "contact"] },
+  { nom: "Alexandre D.", texte: "Super accueil de la part des gérants ! La boutique est charmante, plein de choix de vins et de magnifiques fleurs ! À très vite.", pages: ["vins"] },
+  { nom: "Marina M.", texte: "Erell s'est occupée de la décoration florale pour notre mariage. C'était vraiment magnifique ! Elle a un réel talent pour sublimer votre mariage. Le petit plus : que de la fleur bretonne.", pages: ["fleurs"] },
+  { nom: "Marie T.", texte: "Passée chez Arrosé pour fleurir une tombe, et super bien conseillée : on m'a aidée à choisir des plantes robustes pour bien tenir en extérieur au cimetière, le tout très joli. Et bonne surprise, c'est aussi une cave à vin ! Un chouette commerce à Trébeurden, je recommande ++", pages: ["fleurs", "contact"] },
+  { nom: "Anna L.", texte: "Je reviendrai ! De superbes bouquets, modernes et avec des fleurs locales, de saison. De très bons conseils sur la partie cave. Une chance pour Trébeurden.", pages: ["fleurs"] },
+  { nom: "Bleue A.", texte: "Très joli bouquet champêtre pour mon anniversaire. Une semaine après il est encore beau.", pages: ["fleurs"] },
+];
+
+document.querySelectorAll(".avis-track").forEach((track) => {
+  const page = document.body.dataset.page;
+  let selection = AVIS.filter((a) => a.pages.includes(page));
+  if (!selection.length) selection = AVIS.slice(0, 4);
+  track.innerHTML = selection
+    .map(
+      (a) => `<article class="avis-card">
+        <div class="avis-stars" aria-label="5 sur 5">★★★★★</div>
+        <p>« ${a.texte} »</p>
+        <div class="avis-author">${a.nom}</div>
+      </article>`,
+    )
+    .join("");
+});
