@@ -158,3 +158,20 @@ function initHamburger() {
     if (e.key === "Escape") closeMenu();
   });
 }
+
+/* ── ROTATEUR DE PHOTOS ───────────────────────────
+   Fait alterner en fondu les images d'un .photo-rotator
+   (désactivé si l'utilisateur préfère réduire les animations) */
+document.querySelectorAll(".photo-rotator").forEach((rotator) => {
+  const imgs = rotator.querySelectorAll("img");
+  if (!imgs.length) return;
+  imgs[0].classList.add("is-visible");
+  if (imgs.length < 2) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let current = 0;
+  setInterval(() => {
+    imgs[current].classList.remove("is-visible");
+    current = (current + 1) % imgs.length;
+    imgs[current].classList.add("is-visible");
+  }, 5500);
+});

@@ -15,10 +15,10 @@
   <meta property="og:title" content="Cave à vins Trébeurden, bière, spiritueux" />
   <meta property="og:description" content="La cave à vins d'Arrosé à Trébeurden : près de 300 références de vignerons indépendants, bières et cidres bretons et spiritueux, au cœur du Trégor." />
   <meta property="og:url" content="https://xn--arros-fsa.fr/vins.html" />
-  <meta property="og:image" content="https://xn--arros-fsa.fr/images/IMG_0554.webp" />
+  <meta property="og:image" content="https://xn--arros-fsa.fr/images/vins_0_en-tete.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preload" href="fonts/more-sugar.thin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="images/IMG_0554.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="images/vins_0_en-tete.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -26,13 +26,12 @@
 
   <div id="nav-placeholder"></div>
 
-  <section class="section">
-    <div style="text-align:center;">
-      <div>
-        <h1>Qu'est-ce qu'on boit ?</h1>
-        <p>Chez nous, il y en a pour tous les goûts et toutes les envies. Bienvenue dans la <strong>cave à vin
-          d'Arrosé</strong>, à Trébeurden, au cœur du Trégor, en Bretagne.</p>
-      </div>
+  <section class="page-hero">
+    <img class="page-hero-bg" src="images/vins_0_en-tete.webp" alt="" aria-hidden="true" fetchpriority="high" />
+    <div class="page-hero-content">
+      <h1>Qu'est-ce qu'on boit ?</h1>
+      <p>Chez nous, il y en a pour tous les goûts et toutes les envies. Bienvenue dans la <strong>cave à vin
+        d'Arrosé</strong>, à Trébeurden, au cœur du Trégor, en Bretagne.</p>
     </div>
   </section>
 
@@ -48,7 +47,10 @@
         <p><em>Envie de savoir qui se cache derrière nos bouteilles ? Retrouvez la liste de quelques-uns de nos
           vignerons partenaires un peu plus bas.</em></p>
       </div>
-      <img src="images/IMG_0554.webp" alt="L'armoire à vins de la boutique Arrosé" style="height:420px;object-fit:cover;" loading="lazy" decoding="async" />
+      <div class="photo-rotator" style="height:420px;">
+        <img src="images/vins_1_bouteilles.webp" alt="Bouteilles de la cave à vins d'Arrosé" loading="lazy" decoding="async" />
+        <img src="images/vins_2_bouteilles.webp" alt="Sélection de vins de vignerons indépendants" loading="lazy" decoding="async" />
+      </div>
     </div>
   </section>
 
@@ -61,7 +63,7 @@
           made in BZH ! Une belle façon de soutenir les producteurs et brasseurs locaux du Trégor et d'ailleurs en
           Bretagne.</p>
       </div>
-      <img src="images/cave.webp" alt="Bières et cidres bretons chez Arrosé" style="height:360px;object-fit:cover;border-radius:12px;" loading="lazy" decoding="async" />
+      <img src="images/vins_3_bieres.webp" alt="Bières et cidres bretons chez Arrosé" class="img-portrait" loading="lazy" decoding="async" />
     </div>
   </section>
 
@@ -73,7 +75,10 @@
           donc pas prendre la poussière ! Au menu : whisky, gin, rhum, ainsi que différentes liqueurs et apéritifs,
           sélectionnés par Tanguy pour tous les amateurs, curieux ou connaisseurs.</p>
       </div>
-      <img src="images/autre.webp" alt="L'armoire à spiritueux d'Arrosé" style="height:420px;object-fit:cover;" loading="lazy" decoding="async" />
+      <div class="photo-rotator portrait">
+        <img src="images/vins_4_spiritueux.webp" alt="L'armoire à spiritueux d'Arrosé" loading="lazy" decoding="async" />
+        <img src="images/vins_5_spiritueux.webp" alt="Whiskys, gins et rhums sélectionnés par Tanguy" loading="lazy" decoding="async" />
+      </div>
     </div>
   </section>
 
@@ -82,22 +87,26 @@
     <p style="text-align:center;max-width:640px;margin:0 auto 10px;">Des femmes et des hommes passionnés, des domaines
       indépendants et des coups de cœur à découvrir. Clique sur un domaine pour faire connaissance.</p>
     <div class="vignerons-grid">
-      <a class="vigneron-card" href="vigneron-clos-constantin.html"><div class="vigneron-card-body"><span class="vigneron-region">Languedoc</span><span class="vigneron-name">Clos Constantin</span><span class="vigneron-more">Découvrir →</span></div></a>
-      <a class="vigneron-card" href="vigneron-llv.html"><div class="vigneron-card-body"><span class="vigneron-region">Bretagne</span><span class="vigneron-name">LLV</span><span class="vigneron-more">Découvrir →</span></div></a>
-      <a class="vigneron-card" href="vigneron-yann-bertrand.html"><div class="vigneron-card-body"><span class="vigneron-region">Beaujolais</span><span class="vigneron-name">Yann Bertrand</span><span class="vigneron-more">Découvrir →</span></div></a>
-      <a class="vigneron-card" href="vigneron-serol.html"><div class="vigneron-card-body"><span class="vigneron-region">Côte Roannaise</span><span class="vigneron-name">Serol</span><span class="vigneron-more">Découvrir →</span></div></a>
-      <a class="vigneron-card" href="vigneron-fumey-chatelin.html"><div class="vigneron-card-body"><span class="vigneron-region">Jura</span><span class="vigneron-name">Fumey Chatelin</span><span class="vigneron-more">Découvrir →</span></div></a>
-      <a class="vigneron-card" href="vigneron-yvon-clerget.html"><div class="vigneron-card-body"><span class="vigneron-region">Bourgogne</span><span class="vigneron-name">Yvon Clerget</span><span class="vigneron-more">Découvrir →</span></div></a>
-      <a class="vigneron-card" href="vigneron-paul-gaschy.html"><div class="vigneron-card-body"><span class="vigneron-region">Alsace</span><span class="vigneron-name">Paul Gaschy</span><span class="vigneron-more">Découvrir →</span></div></a>
+      <a class="vigneron-card has-photo" href="vigneron-clos-constantin.html"><img class="vigneron-card-bg" src="images/producteurs_clos_constantin_1.webp" alt="Le Clos Constantin, dans le Languedoc" loading="lazy" decoding="async" /><div class="vigneron-card-body"><span class="vigneron-region">Languedoc</span><span class="vigneron-name">Clos Constantin</span><span class="vigneron-more">Découvrir →</span></div></a>
+      <a class="vigneron-card has-photo" href="vigneron-llv.html"><img class="vigneron-card-bg" src="images/producteurs_longues_vignes_1.webp" alt="Les Longues Vignes, en Bretagne" loading="lazy" decoding="async" /><div class="vigneron-card-body"><span class="vigneron-region">Bretagne</span><span class="vigneron-name">LLV</span><span class="vigneron-more">Découvrir →</span></div></a>
+      <a class="vigneron-card has-photo" href="vigneron-yann-bertrand.html"><img class="vigneron-card-bg" src="images/producteurs_yann_bertrand_1.webp" alt="Yann Bertrand, dans le Beaujolais" loading="lazy" decoding="async" /><div class="vigneron-card-body"><span class="vigneron-region">Beaujolais</span><span class="vigneron-name">Yann Bertrand</span><span class="vigneron-more">Découvrir →</span></div></a>
+      <a class="vigneron-card has-photo" href="vigneron-serol.html"><img class="vigneron-card-bg" src="images/producteurs_domaine_serol_1.webp" alt="Le domaine Serol, en Côte Roannaise" loading="lazy" decoding="async" /><div class="vigneron-card-body"><span class="vigneron-region">Côte Roannaise</span><span class="vigneron-name">Serol</span><span class="vigneron-more">Découvrir →</span></div></a>
+      <a class="vigneron-card has-photo" href="vigneron-fumey-chatelin.html"><img class="vigneron-card-bg" src="images/producteurs_fumet_chatelin_1.webp" alt="Le domaine Fumey Chatelin, dans le Jura" loading="lazy" decoding="async" /><div class="vigneron-card-body"><span class="vigneron-region">Jura</span><span class="vigneron-name">Fumey Chatelin</span><span class="vigneron-more">Découvrir →</span></div></a>
+      <a class="vigneron-card has-photo" href="vigneron-yvon-clerget.html"><img class="vigneron-card-bg" src="images/producteurs_thibaud_clerget_1.webp" alt="Le domaine Yvon Clerget, en Bourgogne" loading="lazy" decoding="async" /><div class="vigneron-card-body"><span class="vigneron-region">Bourgogne</span><span class="vigneron-name">Yvon Clerget</span><span class="vigneron-more">Découvrir →</span></div></a>
+      <a class="vigneron-card has-photo" href="vigneron-paul-gaschy.html"><img class="vigneron-card-bg" src="images/producteurs_paul_gaschy_1.webp" alt="Le domaine Paul Gaschy, en Alsace" loading="lazy" decoding="async" /><div class="vigneron-card-body"><span class="vigneron-region">Alsace</span><span class="vigneron-name">Paul Gaschy</span><span class="vigneron-more">Découvrir →</span></div></a>
       <div class="vigneron-card soon"><div class="vigneron-card-body"><span class="vigneron-region">Rhône</span><span class="vigneron-name">Famille de Boel</span><span class="vigneron-more">Portrait à venir</span></div></div>
       <div class="vigneron-card soon"><div class="vigneron-card-body"><span class="vigneron-region">Bordeaux</span><span class="vigneron-name">Jean-Yves Milaire</span><span class="vigneron-more">Portrait à venir</span></div></div>
     </div>
   </section>
 
-  <section class="demande-section">
-    <h2>Une demande plus spécifique ?</h2>
-    <div><p>Une commande pour un évènement, un partenariat, un conseil sur mesure…</p>
-      <p>On est curieux, discutons-en : <a class="cta-link" href="contact.html">→ Contact</a></p></div>
+  <section class="demande-card-wrapper">
+    <div class="demande-card bordeaux">
+      <img src="illus/bouteille_creme.webp" alt="" class="card-bouteille tl" aria-hidden="true" loading="lazy" />
+      <img src="illus/bouteille_vert.webp" alt="" class="card-bouteille br" aria-hidden="true" loading="lazy" />
+      <h2>Une demande plus spécifique ?</h2>
+      <div><p>Une commande pour un évènement, un partenariat, un conseil sur mesure…</p>
+        <p>On est curieux, discutons-en : <a class="cta-link" href="contact.html">→ Contact</a></p></div>
+    </div>
   </section>
 
   <!-- ═══ ENCART AVIS GOOGLE ═══ (avis PLACEHOLDER, à remplacer par de vrais avis) -->
