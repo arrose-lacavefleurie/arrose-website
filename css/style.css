@@ -1948,13 +1948,13 @@ a.vigneron-card.has-photo:hover .vigneron-card-bg{filter:blur(0) brightness(.68)
 .demande-card p{font-size:.92rem;line-height:1.85;max-width:520px;color:rgba(240,230,218,.95);}
 .demande-card .cta-link{color:#fff;}
 .demande-card .cta-link:hover{color:rgba(255,255,255,.7);}
-.demande-card .card-fleur{position:absolute;width:150px;pointer-events:none;}
-.demande-card .card-fleur.tl{top:-52px;left:-46px;transform:rotate(-18deg);}
-.demande-card .card-fleur.br{bottom:-52px;right:-46px;transform:rotate(150deg);}
-.demande-card .card-bouteille{position:absolute;width:84px;pointer-events:none;}
-.demande-card .card-bouteille.tl{top:-40px;left:-30px;transform:rotate(-14deg);}
-.demande-card .card-bouteille.br{bottom:-40px;right:-30px;transform:rotate(14deg);}
-@media (max-width:700px){.demande-card{padding:48px 26px;}.demande-card .card-fleur{width:96px;}.demande-card .card-fleur.tl{top:-32px;left:-18px;}.demande-card .card-fleur.br{bottom:-32px;right:-18px;}.demande-card .card-bouteille{width:56px;}.demande-card .card-bouteille.tl{top:-26px;left:-12px;}.demande-card .card-bouteille.br{bottom:-26px;right:-12px;}}
+.demande-card .card-fleur{position:absolute;width:210px;pointer-events:none;}
+.demande-card .card-fleur.tl{top:-46px;left:-36px;transform:rotate(-18deg);}
+.demande-card .card-fleur.br{bottom:-46px;right:-36px;transform:rotate(150deg);}
+.demande-card .card-bouteille{position:absolute;width:170px;pointer-events:none;}
+.demande-card .card-bouteille.tl{top:-38px;left:-30px;transform:rotate(-14deg);}
+.demande-card .card-bouteille.br{bottom:-38px;right:-30px;transform:rotate(14deg);}
+@media (max-width:700px){.demande-card{padding:48px 26px;}.demande-card .card-fleur{width:120px;}.demande-card .card-fleur.tl{top:-28px;left:-14px;}.demande-card .card-fleur.br{bottom:-28px;right:-14px;}.demande-card .card-bouteille{width:96px;}.demande-card .card-bouteille.tl{top:-22px;left:-10px;}.demande-card .card-bouteille.br{bottom:-22px;right:-10px;}}
 
 /* ── CARTES ÉVÉNEMENTS (date + lieu) ────────────── */
 .events-grid.v2{grid-template-columns:repeat(2,1fr);gap:18px;max-width:880px;margin:0 auto;}
@@ -1980,34 +1980,34 @@ a.vigneron-card.has-photo:hover .vigneron-card-bg{filter:blur(0) brightness(.68)
 body[data-page="ateliers"] .section-dark{margin-bottom:0;}
 @media (prefers-reduced-motion:reduce){.photo-rotator img{transition:none;}}
 
-/* ── V2.1 — retours de Marie ─────────────────────── */
+/* ── V2.1 ─────────────────────── */
 
 /* Arrondis légers sur toutes les photos de contenu */
 .section-2col img,.pres-photo,.photo-rotator,.photo-rotator img{border-radius:12px;}
 
 /* Encart photo portrait : moins large, plus haut */
-.img-portrait{width:min(100%,380px);height:540px;object-fit:cover;justify-self:center;border-radius:12px;}
-.photo-rotator.portrait{width:min(100%,380px);height:540px;justify-self:center;}
-@media (max-width:900px){.img-portrait,.photo-rotator.portrait{height:440px;margin:0 auto;}}
+.img-portrait{width:380px;max-width:100%;height:540px;object-fit:cover;justify-self:center;border-radius:12px;}
+.photo-rotator.portrait{width:380px;max-width:100%;height:540px;justify-self:center;}
+@media (max-width:900px){.img-portrait,.photo-rotator.portrait{width:min(100%,380px);height:440px;margin:0 auto;}}
 
 /* Grille vignerons : carrée, moins large */
 .vignerons-grid{max-width:1000px;margin-left:auto;margin-right:auto;}
 .vignerons-grid .vigneron-card{aspect-ratio:1/1;min-height:0;}
 
 /* Galerie fleurs : mosaïque portrait, moins large */
-.fleurs-gallery{display:block;column-count:3;column-gap:14px;max-width:960px;margin:28px auto 0;}
-.fleurs-gallery figure{margin:0 0 14px;break-inside:avoid;}
-.fleurs-gallery img{height:auto;}
-@media (max-width:900px){.fleurs-gallery{column-count:2;}}
-@media (max-width:560px){.fleurs-gallery{column-count:1;}}
+.fleurs-gallery{display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:auto;gap:14px;max-width:1080px;margin:28px auto 0;}
+.fleurs-gallery figure{margin:0;}
+.fleurs-gallery .tall{grid-row:auto;}
+.fleurs-gallery img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;}
+@media (max-width:900px){.fleurs-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;}}
 
 /* Illustrations décoratives du bloc "fleurs d'ici" */
 .fleurs-ici-wrapper{position:relative;overflow:hidden;}
 .fleurs-ici-wrapper > div{position:relative;z-index:1;}
-.fleurs-ici-illu{position:absolute;width:300px;opacity:.16;pointer-events:none;z-index:0;}
-.fleurs-ici-illu.left{left:-70px;bottom:-80px;transform:rotate(-20deg);}
-.fleurs-ici-illu.right{right:-70px;top:-80px;transform:rotate(160deg);}
-@media (max-width:900px){.fleurs-ici-illu{width:180px;}}
+.fleurs-ici-illu{position:absolute;width:450px;opacity:.16;pointer-events:none;z-index:0;}
+.fleurs-ici-illu.left{left:-100px;bottom:-120px;transform:rotate(-20deg);}
+.fleurs-ici-illu.right{right:-100px;top:-120px;transform:rotate(160deg);}
+@media (max-width:900px){.fleurs-ici-illu{width:240px;}}
 
 /* Bloc dégustation de quilles : photo portrait à gauche, contenu aligné */
 .degu-layout{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto;}
@@ -2021,3 +2021,34 @@ body[data-page="ateliers"] .section-dark{margin-bottom:0;}
 .event-cta p{font-family:var(--font-hand);font-size:1.9rem;color:#fff;margin-bottom:12px;line-height:1.3;}
 .event-cta .cta-link{color:#fff;}
 .event-cta .cta-link:hover{color:rgba(255,255,255,.7);}
+
+/* ── V2.2 ── */
+
+/* 2 colonnes avec photo portrait : la colonne photo prend sa vraie largeur,
+   le tout est centré et resserré pour rapprocher texte et photo */
+.section-2col.cols-portrait{grid-template-columns:minmax(0,560px) auto;gap:56px;justify-content:center;max-width:1040px;margin:0 auto;}
+.section-2col.cols-portrait.reverse{grid-template-columns:auto minmax(0,560px);}
+@media (max-width:900px){.section-2col.cols-portrait,.section-2col.cols-portrait.reverse{grid-template-columns:1fr;}}
+
+/* Sur mobile : la photo passe SOUS le texte (au lieu d'au-dessus) */
+@media (max-width:900px){.section-2col.reverse img,.section-2col.reverse .photo-rotator,.section-2col.reverse .photo-duo{order:0;}}
+
+/* Index : resserrer l'écart entre "On se présente" et "Mais Arrosé" */
+body[data-page="home"] .section-presentation{padding-bottom:36px;}
+
+/* Duos de photos plus hauts (portraits) */
+.photo-duo.tall img{height:520px;}
+@media (max-width:560px){.photo-duo.tall img{height:380px;}}
+
+/* Photo portrait encore plus grande (vins & fleurs, ateliers) */
+.img-portrait.xl{width:430px;height:640px;}
+@media (max-width:900px){.img-portrait.xl{width:min(100%,430px);height:500px;}}
+
+/* Note planning du bloc quilles : centrée */
+.degu-note{text-align:center;}
+
+/* Illus des cartes demande : derrière le texte */
+.demande-card .card-fleur,
+.demande-card .card-bouteille{z-index:0;}
+.demande-card h2,
+.demande-card > div{position:relative;z-index:1;}
