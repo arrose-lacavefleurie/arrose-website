@@ -178,8 +178,18 @@ document.querySelectorAll(".photo-rotator").forEach((rotator) => {
 
 
 /* ── AVIS GOOGLE ──────────────────────────────────
-   Un seul endroit à modifier. "pages" indique où
-   l'avis s'affiche : home, vins, fleurs, contact */
+   TOUT l'encart avis se modifie ici (et uniquement ici) :
+   titre, note, nombre d'avis, lien Google, et les avis.
+   Tous les avis s'affichent sur toutes les pages
+   (le champ "pages" est conservé mais plus utilisé). */
+const AVIS_CONFIG = {
+  titre: "Ils parlent de nous",
+  note: "4,9",
+  nombre: "avis clients",
+  lienGoogle: "https://search.google.com/local/reviews?placeid=ChIJ6dEXWL3TE0gRJQN5qYpZX6A",
+  lienTexte: "→ Voir tous nos avis sur Google",
+};
+
 const AVIS = [
   { nom: "Lucile L.", texte: "Très belle découverte ! La boutique est superbe, avec un concept génial. L'accueil est très chaleureux. Je recommande vivement cette boutique !", pages: ["home", "contact"] },
   { nom: "Envel R.", texte: "Superbe concept, accueil au top et beaucoup de goût ! Bravo à ces deux jeunes commerçants pour cette belle cave fleurie !", pages: ["home", "contact"] },
@@ -194,11 +204,8 @@ const AVIS = [
   { nom: "Bleue A.", texte: "Très joli bouquet champêtre pour mon anniversaire. Une semaine après il est encore beau.", pages: ["fleurs"] },
 ];
 
-document.querySelectorAll(".avis-track").forEach((track) => {
-  const page = document.body.dataset.page;
-  let selection = AVIS.filter((a) => a.pages.includes(page));
-  if (!selection.length) selection = AVIS.slice(0, 4);
-  track.innerHTML = selection
+document.querySelectorAll(".avis-google").forEach((section) => {
+  const cartes = AVIS
     .map(
       (a) => `<article class="avis-card">
         <div class="avis-stars" aria-label="5 sur 5">★★★★★</div>
@@ -207,4 +214,11 @@ document.querySelectorAll(".avis-track").forEach((track) => {
       </article>`,
     )
     .join("");
+  section.innerHTML = `
+    <div class="avis-google-head">
+      <h2 id="avis-title">${AVIS_CONFIG.titre}</h2>
+      <div class="avis-google-note"><span class="g-logo">Google</span><span class="avis-stars">★★★★★</span><span>${AVIS_CONFIG.note} · ${AVIS_CONFIG.nombre}</span></div>
+    </div>
+    <div class="avis-track">${cartes}</div>
+    <div class="avis-google-cta"><a class="cta-link" href="${AVIS_CONFIG.lienGoogle}" target="_blank" rel="noopener">${AVIS_CONFIG.lienTexte}</a></div>`;
 });

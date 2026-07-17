@@ -1937,8 +1937,13 @@ a.vigneron-card.has-photo:hover .vigneron-card-bg{filter:blur(0) brightness(.68)
 .vigneron-card.has-photo .vigneron-more{color:var(--beige);}
 
 /* ── PAGE VIGNERON : DEUX PHOTOS ────────────────── */
-.vigneron-detail-photos{display:grid;gap:16px;}
-.vigneron-detail-photos img{width:100%;border-radius:14px;border:1.4px solid var(--noir);}
+/* Texte en pleine largeur, puis les 2 photos côte à côte
+   en dessous, recadrées au même format pour un alignement net */
+.vigneron-detail-grid{grid-template-columns:1fr;gap:36px;}
+.vigneron-detail-grid > div:first-child{max-width:720px;}
+.vigneron-detail-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:820px;}
+.vigneron-detail-photos img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;}
+@media (max-width:560px){.vigneron-detail-photos{grid-template-columns:1fr;}}
 
 /* ── CARTE "UNE ENVIE FLORALE ?" ────────────────── */
 .demande-card-wrapper{padding:32px 48px 96px;background:var(--beige);}
