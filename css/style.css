@@ -1991,9 +1991,25 @@ body[data-page="ateliers"] .section-dark{margin-bottom:0;}
 .section-2col img,.pres-photo,.photo-rotator,.photo-rotator img{border-radius:12px;}
 
 /* Encart photo portrait : moins large, plus haut */
-.img-portrait{width:380px;max-width:100%;height:540px;object-fit:cover;justify-self:center;border-radius:12px;}
+/* NB : le sélecteur .section-2col img (plus haut) est plus spécifique que .img-portrait
+   et écrasait le height:540px par un height:400px. On double le sélecteur pour reprendre la main. */
+.img-portrait,
+.section-2col img.img-portrait{width:380px;max-width:100%;height:540px;object-fit:cover;justify-self:center;border-radius:12px;}
 .photo-rotator.portrait{width:380px;max-width:100%;height:540px;justify-self:center;}
-@media (max-width:900px){.img-portrait,.photo-rotator.portrait{width:min(100%,380px);height:440px;margin:0 auto;}}
+@media (max-width:900px){
+  .img-portrait,
+  .section-2col img.img-portrait,
+  .photo-rotator.portrait{width:min(100%,380px);height:440px;margin:0 auto;}
+}
+
+/* Encart photo paysage : même gabarit que .pres-photo (bloc "On se présente ?"),
+   mais sans le filtre noir & blanc. Sert à aligner le bloc du dessous sur celui du dessus. */
+.img-paysage,
+.section-2col img.img-paysage{width:100%;height:480px;object-fit:cover;border-radius:12px;}
+@media (max-width:900px){
+  .img-paysage,
+  .section-2col img.img-paysage{height:300px;}
+}
 
 /* Grille vignerons : carrée, moins large */
 .vignerons-grid{max-width:1000px;margin-left:auto;margin-right:auto;}
@@ -2046,8 +2062,13 @@ body[data-page="home"] .section-presentation{padding-bottom:36px;}
 @media (max-width:560px){.photo-duo.tall img{height:380px;}}
 
 /* Photo portrait encore plus grande (vins & fleurs, ateliers) */
-.img-portrait.xl{width:430px;height:640px;}
-@media (max-width:900px){.img-portrait.xl{width:min(100%,430px);height:500px;}}
+/* Sélecteur doublé pour rester prioritaire sur .section-2col img.img-portrait ci-dessus. */
+.img-portrait.xl,
+.section-2col img.img-portrait.xl{width:430px;height:640px;}
+@media (max-width:900px){
+  .img-portrait.xl,
+  .section-2col img.img-portrait.xl{width:min(100%,430px);height:500px;}
+}
 
 /* Note planning du bloc quilles : centrée */
 .degu-note{text-align:center;}
