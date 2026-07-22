@@ -5,16 +5,16 @@
 
 @font-face {
   font-family: "more-sugar-regular";
-  src: url("../fonts/more-sugar.regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+  src: url("../fonts/more-sugar.regular.woff2") format("woff2"),
+       url("../fonts/more-sugar.regular.otf") format("opentype");
+  font-weight: normal; font-style: normal; font-display: swap;
 }
 
 @font-face {
   font-family: "more-sugar-thin";
-  src: url("../fonts/more-sugar.thin.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+  src: url("../fonts/more-sugar.thin.woff2") format("woff2"),
+       url("../fonts/more-sugar.thin.otf") format("opentype");
+  font-weight: normal; font-style: normal; font-display: swap;
 }
 
 /* ── VARIABLES ─────────────────────────────────────── */
@@ -25,7 +25,7 @@
   --vert: #506927;
   --noir: #1a1a1a;
   --blanc: #ffffff;
-  --font-title: "Futura";
+  --font-title: "Futura", "Century Gothic", "Avenir Next";
   --font-hand: "more-sugar-thin", cursive;
 }
 
@@ -176,6 +176,29 @@ nav {
   margin-bottom: 28px;
 }
 
+body[data-page="vins"] h1 {
+  font-family: var(--font-hand);
+  font-size: 2.6rem;
+  color: var(--bordeaux);
+  margin-bottom: 32px;
+}
+body[data-page="vins"] .section-dark h2,
+body[data-page="vins"] .section-green h2 {
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: 2.6rem;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+body[data-page="fleurs"] .section-green h2 {
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: 2.6rem;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
 .section p {
   font-size: 0.92rem;
   line-height: 1.85;
@@ -204,6 +227,9 @@ nav {
 .section-2col img {
   height: 400px;
   object-fit: cover;
+}
+.section-2col.reverse img {
+  order: -1;
 }
 
 /* ── CTA LINKS ─────────────────────────────────────── */
@@ -316,7 +342,7 @@ nav {
 .demande-section h2 {
   font-family: var(--font-hand);
   font-size: 2.4rem;
-  color: var(--noir);
+  color: var(--vert);
   line-height: 1.3;
 }
 .demande-section p {
@@ -428,6 +454,21 @@ footer {
   min-width: 90px;
   color: var(--beige);
   font-weight: 600;
+}
+.footer-bottom {
+  background: var(--bordeaux);
+  text-align: center;
+  padding: 14px 48px;
+  border-top: 1px solid rgba(255, 233, 206, 0.2);
+}
+.footer-bottom a {
+  color: rgba(240, 230, 218, 0.6);
+  font-size: 0.75rem;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.footer-bottom a:hover {
+  color: var(--beige);
 }
 
 /* ── PLACEHOLDERS (à remplacer par vraies images) ── */
@@ -928,7 +969,7 @@ footer {
 ════════════════════════════════════════════════════ */
 
 body[data-page="fleurs"] {
-  cursor: url("images/curseur-fleur.png"), auto;
+  cursor: url("../images/curseur-fleur.png"), auto;
 }
 
 /* ── SECTION INSCRIPTION CENTRÉE ───────────────── */
@@ -1770,3 +1811,281 @@ body[data-page="fleurs"] {
     height: 300px;
   }
 }
+
+/* ── MENTIONS LÉGALES ──────────────────────────────── */
+.mentions-legales {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 72px 48px;
+  background: var(--beige);
+}
+.mentions-legales h2 {
+  font-family: var(--font-hand);
+  font-size: 2.4rem;
+  color: var(--bordeaux);
+  margin-bottom: 48px;
+}
+.mentions-block {
+  margin-bottom: 36px;
+}
+.mentions-block h3 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bordeaux);
+  margin-bottom: 10px;
+}
+.mentions-block p {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: var(--noir);
+  margin-bottom: 8px;
+}
+.mentions-block a {
+  color: var(--bordeaux);
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .mentions-legales {
+    padding: 48px 24px;
+  }
+}
+
+/* ═══ AJOUTS site-v2 — Avis Google & Vignerons ═══ */
+.avis-google{background:var(--beige2);padding:64px 48px;border-top:1.5px solid var(--noir);border-bottom:1.5px solid var(--noir);}
+.avis-google-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:40px;}
+.avis-google-head h2{font-family:var(--font-hand);font-size:2.4rem;color:var(--bordeaux);}
+.avis-google-note{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:700;letter-spacing:.03em;}
+.avis-google-note .g-logo{font-family:var(--font-title);font-weight:700;}
+.avis-stars{color:#e7a900;letter-spacing:2px;font-size:1.05rem;}
+.avis-track{display:flex;gap:22px;overflow-x:auto;padding:6px 2px 18px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.avis-track::-webkit-scrollbar{height:6px;}
+.avis-track::-webkit-scrollbar-thumb{background:rgba(118,22,19,.35);border-radius:3px;}
+.avis-card{flex:0 0 320px;scroll-snap-align:start;background:var(--beige);border:1.2px solid rgba(26,26,26,.18);border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:12px;}
+.avis-card .avis-stars{font-size:.95rem;}
+.avis-card p{font-size:.9rem;line-height:1.7;flex-grow:1;}
+.avis-card .avis-author{font-weight:700;font-size:.85rem;letter-spacing:.02em;}
+.avis-google-cta{text-align:center;margin-top:28px;}
+.vignerons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;}
+.vigneron-card{display:flex;flex-direction:column;background:var(--beige);border:1.4px solid var(--noir);border-radius:12px;overflow:hidden;color:var(--noir);transition:transform .25s ease,box-shadow .25s ease;min-height:150px;}
+a.vigneron-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(26,26,26,.16);}
+.vigneron-card-body{padding:22px 24px;display:flex;flex-direction:column;gap:6px;height:100%;}
+.vigneron-region{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--vert);}
+.vigneron-name{font-family:var(--font-hand);font-size:1.7rem;color:var(--bordeaux);line-height:1.1;}
+.vigneron-card .vigneron-more{margin-top:auto;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bordeaux);}
+.vigneron-card.soon{opacity:.72;border-style:dashed;}
+.vigneron-card.soon .vigneron-more{color:#8a8a8a;}
+.vigneron-detail{padding:64px 48px;max-width:1000px;margin:0 auto;}
+.vigneron-detail .back-link{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bordeaux);}
+.vigneron-detail-region{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--vert);margin-top:22px;}
+.vigneron-detail h1{font-family:var(--font-hand);font-size:3rem;color:var(--bordeaux);margin:4px 0 10px;}
+.vigneron-detail-baseline{font-family:var(--font-hand);font-size:1.4rem;color:var(--noir);margin-bottom:30px;}
+.vigneron-detail-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;}
+.vigneron-detail-grid p{font-size:.95rem;line-height:1.85;margin-bottom:16px;}
+.vigneron-detail-photo{position:relative;border:1.4px solid var(--noir);border-radius:14px;overflow:hidden;background:var(--beige2);min-height:320px;display:flex;align-items:center;justify-content:center;}
+.vigneron-detail-photo img{width:100%;height:100%;object-fit:cover;}
+.vigneron-coup{background:var(--bordeaux);color:var(--beige);border-radius:12px;padding:20px 24px;margin:8px 0 16px;font-size:.95rem;line-height:1.7;}
+.vigneron-coup strong{color:#fff;}
+.vigneron-tag-limite{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--vert);border:1.2px solid var(--vert);border-radius:30px;padding:5px 14px;}
+.fleurs-gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(140px,18vw,220px);gap:14px;margin-top:12px;}
+.fleurs-gallery figure{margin:0;overflow:hidden;border-radius:10px;}
+.fleurs-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.fleurs-gallery figure:hover img{transform:scale(1.06);}
+.fleurs-gallery .tall{grid-row:span 2;}
+@media (max-width:900px){.vignerons-grid{grid-template-columns:repeat(2,1fr);}.vigneron-detail-grid{grid-template-columns:1fr;}.fleurs-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(140px,30vw,200px);}}
+@media (max-width:560px){.avis-google,.section,.section-dark,.section-green{padding-left:22px;padding-right:22px;}.vignerons-grid{grid-template-columns:1fr;}.avis-card{flex-basis:78vw;}}
+.lien-inline{color:var(--bordeaux);text-decoration:underline;font-weight:700;}
+.lien-inline:hover{color:var(--vert);}
+.lien-inline-beige{color:#fff;text-decoration:underline;font-weight:700;}
+.lien-inline-beige:hover{color:rgba(255,255,255,.75);}
+
+/* ════════════════════════════════════════════════════
+   V2 — Refonte images : en-têtes bandeau, rotateurs,
+   cartes vignerons photo, galeries événements
+════════════════════════════════════════════════════ */
+
+/* ── EN-TÊTE BANDEAU PLEINE LARGEUR ─────────────── */
+.page-hero{position:relative;min-height:300px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:56px 24px;}
+.page-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(4px) brightness(.5);transform:scale(1.08);}
+.page-hero-content{position:relative;z-index:1;max-width:860px;}
+body .page-hero h1{font-family:var(--font-hand);font-size:clamp(2.2rem,4.5vw,3rem);color:#fff;margin-bottom:14px;}
+.page-hero p{color:rgba(255,255,255,.94);font-size:.95rem;line-height:1.75;margin:0 auto;}
+.page-hero p strong{color:#fff;}
+.page-hero .lien-inline{color:#fff;}
+.page-hero .lien-inline:hover{color:rgba(255,255,255,.75);}
+@media (max-width:560px){.page-hero{min-height:240px;padding:40px 22px;}}
+
+/* ── ROTATEUR DE PHOTOS (fondu automatique) ─────── */
+.photo-rotator{position:relative;overflow:hidden;height:420px;}
+.photo-rotator img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;}
+.photo-rotator img.is-visible{opacity:1;}
+.photo-rotator.rounded,.photo-rotator.rounded img{border-radius:12px;}
+
+/* ── DUO DE PHOTOS CÔTE À CÔTE ──────────────────── */
+.photo-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;}
+.photo-duo img{width:100%;height:400px;object-fit:cover;border-radius:12px;}
+@media (max-width:560px){.photo-duo{grid-template-columns:1fr;}.photo-duo img{height:300px;}}
+
+/* ── CARTES VIGNERONS AVEC PHOTO ────────────────── */
+.vigneron-card.has-photo{position:relative;justify-content:flex-end;background:var(--noir);border:none;}
+.vigneron-card.has-photo .vigneron-card-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(2px) brightness(.55);transform:scale(1.06);transition:filter .35s ease,transform .35s ease;}
+a.vigneron-card.has-photo:hover .vigneron-card-bg{filter:blur(0) brightness(.68);transform:scale(1.12);}
+.vigneron-card.has-photo .vigneron-card-body{position:relative;z-index:1;height:auto;justify-content:flex-end;}
+.vigneron-card.has-photo .vigneron-region{color:rgba(240,230,218,.92);}
+.vigneron-card.has-photo .vigneron-name{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35);}
+.vigneron-card.has-photo .vigneron-more{color:var(--beige);}
+
+/* ── PAGE VIGNERON : DEUX PHOTOS ────────────────── */
+/* Texte en pleine largeur, puis les 2 photos côte à côte
+   en dessous, recadrées au même format pour un alignement net */
+.vigneron-detail-grid{grid-template-columns:1fr;gap:36px;}
+.vigneron-detail-grid > div:first-child{max-width:720px;}
+.vigneron-detail-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:820px;}
+.vigneron-detail-photos img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;}
+@media (max-width:560px){.vigneron-detail-photos{grid-template-columns:1fr;}}
+
+/* ── CARTE "UNE ENVIE FLORALE ?" ────────────────── */
+.demande-card-wrapper{padding:32px 48px 96px;background:var(--beige);}
+.demande-card{position:relative;max-width:760px;margin:0 auto;background:var(--vert);border-radius:18px;padding:60px 48px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;}
+.demande-card.bordeaux{background:var(--bordeaux);}
+.demande-card h2{font-family:var(--font-hand);font-size:2.4rem;color:#fff;line-height:1.3;}
+.demande-card p{font-size:.92rem;line-height:1.85;max-width:520px;color:rgba(240,230,218,.95);}
+.demande-card .cta-link{color:#fff;}
+.demande-card .cta-link:hover{color:rgba(255,255,255,.7);}
+.demande-card .card-fleur{position:absolute;width:210px;pointer-events:none;}
+.demande-card .card-fleur.tl{top:-46px;left:-36px;transform:rotate(-18deg);}
+.demande-card .card-fleur.br{bottom:-46px;right:-36px;transform:rotate(150deg);}
+.demande-card .card-bouteille{position:absolute;width:170px;pointer-events:none;}
+.demande-card .card-bouteille.tl{top:-38px;left:-30px;transform:rotate(-14deg);}
+.demande-card .card-bouteille.br{bottom:-38px;right:-30px;transform:rotate(14deg);}
+@media (max-width:700px){.demande-card{padding:48px 26px;}.demande-card .card-fleur{width:120px;}.demande-card .card-fleur.tl{top:-28px;left:-14px;}.demande-card .card-fleur.br{bottom:-28px;right:-14px;}.demande-card .card-bouteille{width:96px;}.demande-card .card-bouteille.tl{top:-22px;left:-10px;}.demande-card .card-bouteille.br{bottom:-22px;right:-10px;}}
+
+/* ── CARTES ÉVÉNEMENTS (date + lieu) ────────────── */
+.events-grid.v2{grid-template-columns:repeat(2,1fr);gap:18px;max-width:880px;margin:0 auto;}
+.events-grid.v2 .card-img{height:auto;aspect-ratio:1/1;border-radius:12px;}
+.event-card-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;z-index:1;}
+.event-card-date{font-family:var(--font-hand);font-size:2rem;color:#fff;line-height:1.15;text-shadow:0 1px 8px rgba(0,0,0,.4);}
+.event-card-lieu{font-family:var(--font-title);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.92);}
+.event-card-more{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--beige);margin-top:6px;}
+@media (max-width:700px){.events-grid.v2{grid-template-columns:1fr;}}
+
+/* ── PAGE GALERIE ÉVÉNEMENT ─────────────────────── */
+.event-detail{padding:64px 48px;max-width:960px;margin:0 auto;}
+.event-detail .back-link{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bordeaux);}
+.event-detail-lieu{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--vert);margin-top:22px;}
+.event-detail h1{font-family:var(--font-hand);font-size:3rem;color:var(--bordeaux);margin:4px 0 30px;}
+.event-galerie{column-count:3;column-gap:14px;}
+.event-galerie img{width:100%;margin-bottom:14px;border-radius:10px;cursor:pointer;transition:transform .3s ease;}
+.event-galerie img:hover{transform:scale(1.02);}
+@media (max-width:900px){.event-galerie{column-count:2;}.event-detail{padding:48px 24px;}}
+@media (max-width:560px){.event-galerie{column-count:1;}}
+
+/* ── AJUSTEMENTS DIVERS V2 ──────────────────────── */
+body[data-page="ateliers"] .section-dark{margin-bottom:0;}
+@media (prefers-reduced-motion:reduce){.photo-rotator img{transition:none;}}
+
+/* ── V2.1 ─────────────────────── */
+
+/* Arrondis légers sur toutes les photos de contenu */
+.section-2col img,.pres-photo,.photo-rotator,.photo-rotator img{border-radius:12px;}
+
+/* Encart photo portrait : moins large, plus haut */
+/* NB : le sélecteur .section-2col img (plus haut) est plus spécifique que .img-portrait
+   et écrasait le height:540px par un height:400px. On double le sélecteur pour reprendre la main. */
+.img-portrait,
+.section-2col img.img-portrait{width:380px;max-width:100%;height:540px;object-fit:cover;justify-self:center;border-radius:12px;}
+.photo-rotator.portrait{width:380px;max-width:100%;height:540px;justify-self:center;}
+@media (max-width:900px){
+  .img-portrait,
+  .section-2col img.img-portrait,
+  .photo-rotator.portrait{width:min(100%,380px);height:440px;margin:0 auto;}
+}
+
+/* Encart photo paysage : même gabarit que .pres-photo (bloc "On se présente ?"),
+   mais sans le filtre noir & blanc. Sert à aligner le bloc du dessous sur celui du dessus. */
+.img-paysage,
+.section-2col img.img-paysage{width:100%;height:480px;object-fit:cover;border-radius:12px;}
+@media (max-width:900px){
+  .img-paysage,
+  .section-2col img.img-paysage{height:300px;}
+}
+
+/* Grille vignerons : carrée, moins large */
+.vignerons-grid{max-width:1000px;margin-left:auto;margin-right:auto;}
+.vignerons-grid .vigneron-card{aspect-ratio:1/1;min-height:0;}
+
+/* Galerie fleurs : mosaïque portrait, moins large */
+.fleurs-gallery{display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:auto;gap:14px;max-width:1080px;margin:28px auto 0;}
+.fleurs-gallery figure{margin:0;}
+.fleurs-gallery .tall{grid-row:auto;}
+.fleurs-gallery img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;}
+@media (max-width:900px){.fleurs-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;}}
+
+/* Illustrations décoratives du bloc "fleurs d'ici" */
+.fleurs-ici-wrapper{position:relative;overflow:hidden;}
+.fleurs-ici-wrapper > div{position:relative;z-index:1;}
+.fleurs-ici-illu{position:absolute;width:450px;opacity:.16;pointer-events:none;z-index:0;}
+.fleurs-ici-illu.left{left:-100px;bottom:-120px;transform:rotate(-20deg);}
+.fleurs-ici-illu.right{right:-100px;top:-120px;transform:rotate(160deg);}
+@media (max-width:900px){.fleurs-ici-illu{width:240px;}}
+
+/* Bloc dégustation de quilles : photo portrait à gauche, contenu aligné */
+.degu-layout{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto;}
+.degu-photo{width:100%;height:560px;object-fit:cover;border-radius:12px;}
+.degu-cards-v2{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:28px 0;}
+.degu-note{font-family:var(--font-hand);font-size:1.1rem;line-height:1.7;color:var(--beige);margin-top:8px;}
+@media (max-width:900px){.degu-layout{grid-template-columns:1fr;gap:32px;}.degu-photo{height:440px;max-width:380px;margin:0 auto;}.degu-cards-v2{grid-template-columns:1fr;gap:24px;}}
+
+/* CTA des pages galeries événements */
+.event-cta{background:var(--vert);border-radius:16px;text-align:center;padding:44px 32px;margin-top:48px;}
+.event-cta p{font-family:var(--font-hand);font-size:1.9rem;color:#fff;margin-bottom:12px;line-height:1.3;}
+.event-cta .cta-link{color:#fff;}
+.event-cta .cta-link:hover{color:rgba(255,255,255,.7);}
+
+/* ── V2.2 ── */
+
+/* 2 colonnes avec photo portrait : la colonne photo prend sa vraie largeur,
+   le tout est centré et resserré pour rapprocher texte et photo */
+.section-2col.cols-portrait{grid-template-columns:minmax(0,560px) auto;gap:56px;justify-content:center;max-width:1040px;margin:0 auto;}
+.section-2col.cols-portrait.reverse{grid-template-columns:auto minmax(0,560px);}
+@media (max-width:900px){.section-2col.cols-portrait,.section-2col.cols-portrait.reverse{grid-template-columns:1fr;}}
+
+/* Sur mobile : la photo passe SOUS le texte (au lieu d'au-dessus) */
+@media (max-width:900px){.section-2col.reverse img,.section-2col.reverse .photo-rotator,.section-2col.reverse .photo-duo{order:0;}}
+
+/* Index : resserrer l'écart entre "On se présente" et "Mais Arrosé" */
+body[data-page="home"] .section-presentation{padding-bottom:36px;}
+
+/* Duos de photos plus hauts (portraits) */
+.photo-duo.tall img{height:520px;}
+@media (max-width:560px){.photo-duo.tall img{height:380px;}}
+
+/* Photo portrait encore plus grande (vins & fleurs, ateliers) */
+/* Sélecteur doublé pour rester prioritaire sur .section-2col img.img-portrait ci-dessus. */
+.img-portrait.xl,
+.section-2col img.img-portrait.xl{width:430px;height:640px;}
+@media (max-width:900px){
+  .img-portrait.xl,
+  .section-2col img.img-portrait.xl{width:min(100%,430px);height:500px;}
+}
+
+/* Note planning du bloc quilles : centrée */
+.degu-note{text-align:center;}
+
+/* Illus des cartes demande : derrière le texte */
+.demande-card .card-fleur,
+.demande-card .card-bouteille{z-index:0;}
+.demande-card h2,
+.demande-card > div{position:relative;z-index:1;}
+
+/* ── ENCART INSTAGRAM (page contact) ────────────── */
+.insta-wrapper{padding:8px 48px 56px;background:var(--beige);}
+.insta-card{display:flex;align-items:center;gap:28px;max-width:760px;margin:0 auto;background:var(--vert);border-radius:18px;padding:32px 40px;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease;}
+.insta-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(26,26,26,.16);}
+.insta-icon{width:52px;height:52px;flex-shrink:0;fill:#fff;}
+.insta-handle{font-family:var(--font-hand);font-size:1.6rem;color:#fff;margin-bottom:6px;}
+.insta-text p{font-size:.88rem;line-height:1.7;color:rgba(240,230,218,.95);margin:0;}
+.insta-follow{flex-shrink:0;font-weight:700;font-size:.9rem;letter-spacing:.04em;color:#fff;white-space:nowrap;}
+.insta-card:hover .insta-follow{text-decoration:underline;}
+@media (max-width:700px){.insta-wrapper{padding:8px 22px 48px;}.insta-card{flex-direction:column;text-align:center;gap:16px;padding:32px 26px;}}

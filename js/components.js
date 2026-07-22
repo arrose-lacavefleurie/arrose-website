@@ -9,8 +9,8 @@ function renderNav(activePage) {
   const pages = [
     { id: "vins", label: "Vins", href: "vins.html" },
     { id: "fleurs", label: "Fleurs", href: "fleurs.html" },
+    { id: "ateliers", label: "Ateliers", href: "ateliers.html" },
     { id: "evenements", label: "Évènements", href: "evenements.html" },
-    { id: "abonnements", label: "Abonnements", href: "abonnements.html" },
   ];
 
   const links = pages
@@ -62,32 +62,37 @@ function renderFooter() {
         <div class="logo-sub">La cave fleurie</div>
         <div class="footer-socials">
           <a href="https://www.instagram.com/arrose.lacavefleurie/" aria-label="Instagram">${svgIG}</a>
-          <a href="#" aria-label="Facebook">${svgFB}</a>
+          <a href="https://www.facebook.com/share/1Hr2yi8RXr/?mibextid=wwXIfr" aria-label="Facebook">${svgFB}</a>
         </div>
       </div>
       <div class="footer-col footer-col-sep">
         <h4>Contact</h4>
         <address>
-          31D rue des plages<br/>
-          Trébeurden – 22560<br/><br/>
-          <strong>Boutique :</strong> xx xx xx xx xx
+          31C rue des plages<br/>
+          22560 Trébeurden<br/><br/>
+          <strong>Boutique :</strong> <br/>
+          06 10 50 08 42 <br/>
+          06 29 49 40 33 <br/>
         </address>
         <br/>
-        <a href="contact.html">Demande spécifique →</a>
+        <a href="contact.html">→ Demande spécifique</a>
       </div>
       <div class="footer-col">
         <h4>Horaires</h4>
         <div class="footer-horaires">
-          <span>Lundi :</span> —<br/>
-          <span>Mardi :</span> —<br/>
-          <span>Mercredi :</span> —<br/>
-          <span>Jeudi :</span> —<br/>
-          <span>Vendredi :</span> —<br/>
-          <span>Samedi :</span> —<br/>
-          <span>Dimanche :</span> —
+          <span>Lundi :</span> Fermé <br/> 
+          <span>Mardi :</span> 10h / 19h<br/> 
+          <span>Mercredi :</span> 10h / 19h<br/> 
+          <span>Jeudi :</span> 10h / 19h<br/> 
+          <span>Vendredi :</span> 10h / 20h<br/> 
+          <span>Samedi :</span> 10h / 20h<br/> 
+          <span>Dimanche :</span> 10h / 13h<br/>
         </div>
       </div>
     </footer>
+    <div class="footer-bottom">
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
   `;
 }
 
@@ -153,3 +158,67 @@ function initHamburger() {
     if (e.key === "Escape") closeMenu();
   });
 }
+
+/* ── ROTATEUR DE PHOTOS ───────────────────────────
+   Fait alterner en fondu les images d'un .photo-rotator
+   (désactivé si l'utilisateur préfère réduire les animations) */
+document.querySelectorAll(".photo-rotator").forEach((rotator) => {
+  const imgs = rotator.querySelectorAll("img");
+  if (!imgs.length) return;
+  imgs[0].classList.add("is-visible");
+  if (imgs.length < 2) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let current = 0;
+  setInterval(() => {
+    imgs[current].classList.remove("is-visible");
+    current = (current + 1) % imgs.length;
+    imgs[current].classList.add("is-visible");
+  }, 5500);
+});
+
+
+/* ── AVIS GOOGLE ──────────────────────────────────
+   TOUT l'encart avis se modifie ici (et uniquement ici) :
+   titre, note, nombre d'avis, lien Google, et les avis.
+   Tous les avis s'affichent sur toutes les pages
+   (le champ "pages" est conservé mais plus utilisé). */
+const AVIS_CONFIG = {
+  titre: "Ils parlent de nous",
+  note: "4,9",
+  nombre: "avis clients",
+  lienGoogle: "https://search.google.com/local/reviews?placeid=ChIJ6dEXWL3TE0gRJQN5qYpZX6A",
+  lienTexte: "→ Voir tous nos avis sur Google",
+};
+
+const AVIS = [
+  { nom: "Lucile L.", texte: "Très belle découverte ! La boutique est superbe, avec un concept génial. L'accueil est très chaleureux. Je recommande vivement cette boutique !", pages: ["home", "contact"] },
+  { nom: "Envel R.", texte: "Superbe concept, accueil au top et beaucoup de goût ! Bravo à ces deux jeunes commerçants pour cette belle cave fleurie !", pages: ["home", "contact"] },
+  { nom: "Antoine G.", texte: "Superbe accueil et très belle boutique ! De bons conseils pour les vins avec un large choix. Les bouquets de fleurs sont magnifiques.", pages: ["home", "vins"] },
+  { nom: "Charline R.", texte: "Boutique très chaleureuse où les 2 espaces cave et fleurs cohabitent parfaitement. Et surtout, 2 jeunes commerçants au top !", pages: ["home"] },
+  { nom: "Angélique N.", texte: "J'adore le concept, personnel aimable, de bon conseil ! J'ai acheté un bouquet de pivoines et une bouteille de vin blanc qui est excellent ! J'ai découvert des fleurs champêtre que je connaissais pas et il y a beaucoup de bon vin comme le gigondas ou morgon. Hésitez pas à aller faire un tour !", pages: ["vins"] },
+  { nom: "Lucille R.", texte: "Atelier dégustation et confection de bouquet. Un grand merci à Tanguy et Erell pour cette belle découverte. Merci pour leur patience et leur douceur. Un très grand choix de vins et de fleurs. Allez-y les yeux fermés !", pages: ["vins", "contact"] },
+  { nom: "Alexandre D.", texte: "Super accueil de la part des gérants ! La boutique est charmante, plein de choix de vins et de magnifiques fleurs ! À très vite.", pages: ["vins"] },
+  { nom: "Marina M.", texte: "Erell s'est occupée de la décoration florale pour notre mariage. C'était vraiment magnifique ! Elle a un réel talent pour sublimer votre mariage. Le petit plus : que de la fleur bretonne.", pages: ["fleurs"] },
+  { nom: "Marie T.", texte: "Passée chez Arrosé pour fleurir une tombe, et super bien conseillée : on m'a aidée à choisir des plantes robustes pour bien tenir en extérieur au cimetière, le tout très joli. Et bonne surprise, c'est aussi une cave à vin ! Un chouette commerce à Trébeurden, je recommande ++", pages: ["fleurs", "contact"] },
+  { nom: "Anna L.", texte: "Je reviendrai ! De superbes bouquets, modernes et avec des fleurs locales, de saison. De très bons conseils sur la partie cave. Une chance pour Trébeurden.", pages: ["fleurs"] },
+  { nom: "Bleue A.", texte: "Très joli bouquet champêtre pour mon anniversaire. Une semaine après il est encore beau.", pages: ["fleurs"] },
+];
+
+document.querySelectorAll(".avis-google").forEach((section) => {
+  const cartes = AVIS
+    .map(
+      (a) => `<article class="avis-card">
+        <div class="avis-stars" aria-label="5 sur 5">★★★★★</div>
+        <p>« ${a.texte} »</p>
+        <div class="avis-author">${a.nom}</div>
+      </article>`,
+    )
+    .join("");
+  section.innerHTML = `
+    <div class="avis-google-head">
+      <h2 id="avis-title">${AVIS_CONFIG.titre}</h2>
+      <div class="avis-google-note"><span class="g-logo">Google</span><span class="avis-stars">★★★★★</span><span>${AVIS_CONFIG.note} · ${AVIS_CONFIG.nombre}</span></div>
+    </div>
+    <div class="avis-track">${cartes}</div>
+    <div class="avis-google-cta"><a class="cta-link" href="${AVIS_CONFIG.lienGoogle}" target="_blank" rel="noopener">${AVIS_CONFIG.lienTexte}</a></div>`;
+});
